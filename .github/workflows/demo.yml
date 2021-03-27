@@ -1,4 +1,4 @@
-name: NPM global issue
+name: Issue
 
 on:
   push:
