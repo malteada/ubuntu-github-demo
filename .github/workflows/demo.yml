@@ -1,0 +1,18 @@
+name: NPM global issue
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    steps:
+    - run: npm list --global --depth 0
+  proposed:
+    runs-on: ubuntu-latest
+    steps:
+    - run: sudo npm install -g npm@7
+    - run: sudo npm update -g
+    - run: npm list --global --depth 0
